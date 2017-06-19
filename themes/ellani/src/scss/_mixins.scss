@@ -1,0 +1,333 @@
+/*------------------------------------*
+	Mixins
+\*------------------------------------*/
+
+/*---- Define Box Model ----*/
+@mixin box-sizing($box-model) {
+	-webkit-box-sizing: $box-model; /* Safari <= 5 */
+		-moz-box-sizing: $box-model; /* Firefox <= 19 */
+			box-sizing: $box-model;
+}
+
+/*------------------------------------*
+	Mixins - Text
+*------------------------------------*/
+/*---- Define Font Faces ----*/
+@mixin font-face($font-name, $file-name, $weight: normal, $style: normal) {
+	@font-face {
+		font-family: quote($font-name);
+		// src: url($file-name + '.eot');
+		// src: url($file-name + '.eot?#iefix')  format('embedded-opentype'),
+		// url($file-name + '.woff') format('woff'),
+		// url($file-name + '.ttf')  format('truetype'),
+		// url($file-name + '.svg##{$font-name}')  format('svg');
+		font-weight: $weight;
+		font-style: $style;
+	}
+}
+/*---- Calculate Font Size & Height in Rems ----*/
+/*---- Usage: @include font-size(14px, 16px) ----*/
+@function calc-em($target, $context: $base__font-size) {
+    @return ($target / $context) * 1rem;
+}
+
+@mixin font-size($size, $height) {
+	font-size: $size;
+	font-size: calculateRem($size);
+	line-height: $height * 1px;
+	line-height: calculateRem($height);
+}
+/*---- Calculate letter spacing in Rems ----*/
+@function calc-letter-spacing($psvalue) {
+	@return ($psvalue / 1000 ) * 1rem;
+}
+
+/*------------------------------------*
+	Mixins - Media Queries
+*------------------------------------*/
+@mixin media($minWidth) {
+	@media (min-width: $minWidth) {
+		@content;
+	}
+}
+
+@mixin mediaMax($minWidth) {
+	$maxWidth: ($minWidth - .01em);
+
+	@media (max-width: $maxWidth) {
+		@content;
+	}
+}
+
+
+/*------------------------------------*
+	Mixins - Positioning
+*------------------------------------*/
+
+/*---- Absolute position element to cover whole parent ----*/
+@mixin coverposition($val : 0) {
+	position: absolute;
+	top: $val;
+	right: $val;
+	bottom: $val;
+	left: $val;
+}
+
+
+/*---- Center element vertically & horizontally in parent ----*/
+@mixin center-element {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
+}
+
+/*---- Center element vertically in parent ----*/
+@mixin center-vertical {
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
+			transform: translateY(-50%);
+}
+
+/*---- Center element vertically in parent ----*/
+@mixin center-horizontal {
+	position: absolute;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+		-ms-transform: translateX(-50%);
+			transform: translateX(-50%);
+}
+
+/*---- Expand Div to fill remaining width ----*/
+	/*---- Add to expanded div. Must be second div ----*/
+	@mixin sticky-expand {
+		overflow:hidden;
+	}
+	/*---- Left Stick: Add to stuck div. Must be first div ----*/
+	@mixin sticky-left-fixed {
+		float: left;
+	}
+	/*---- Right Stick: Add to stuck div. Must be first div ----*/
+	@mixin sticky-right-fixed {
+		float: right;
+	}
+/*---- Remove border & outline on buttons ----*/
+@mixin input-reset {
+	border: none;
+	outline: none;
+}
+
+/*---- Animate ----*/
+	/*
+		Usage:
+			@include keyframes(slide-down) {
+				0% { opacity: 1; }
+				90% { opacity: 0; }
+			}
+			@include animation('slide-down 5s 3');
+	*/
+@mixin keyframes($animation-name) {
+	@-webkit-keyframes #{$animation-name} {
+		@content;
+	}
+	@-moz-keyframes #{$animation-name} {
+		@content;
+	}
+	@-ms-keyframes #{$animation-name} {
+		@content;
+	}
+	@-o-keyframes #{$animation-name} {
+		@content;
+	}
+	@keyframes #{$animation-name} {
+		@content;
+	}
+}
+@mixin animation($str) {
+	-webkit-animation: #{$str};
+		-moz-animation: #{$str};
+			-ms-animation: #{$str};
+				-o-animation: #{$str};
+					animation: #{$str};
+}
+
+/*---- Transition ----*/
+	/* Usage: @include transition(color .3s ease); */
+@mixin transition($args...) {
+	-webkit-transition: $args;
+		-moz-transition: $args;
+			-ms-transition: $args;
+				-o-transition: $args;
+					transition: $args;
+}
+
+/*---- Opacity ----*/
+/* Usage:   @include opacity(0.8); */
+@mixin opacity($opacity) {
+	opacity: $opacity;
+	$opacity-ie: $opacity * 100;
+	filter: alpha(opacity=$opacity-ie); /*IE8 */
+}
+
+
+/*---- 3d Box Flip ----*/
+/*
+  Show first div on front of 3d box. On hover flip box to show text on bottom
+  Usage: @include flip-box($height, $width, $perspective, $time, $timing);
+  Place under wrapping div with two children divs: c-flipbox__front & c-flipbox__back
+*/
+@mixin flip-box($height, $width, $perspective, $time, $timing) {
+  $neg-half-height: $height / 2 * (-1);
+  position: relative;
+  height: $height;
+  width: $width;
+  perspective: $perspective;
+  & .c-flipbox__front, & .c-flipbox__back {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform $time;
+    transition-timing-function: $timing;
+    transform-origin: center center $neg-half-height;
+    backface-visibility: hidden;
+  }
+  & .c-flipbox__front {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    z-index: 2;
+  }
+  & .c-flipbox__back {
+    -webkit-transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg);
+    transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg);
+    z-index: 1;
+  }
+  &:hover {
+    .c-flipbox__front {
+      -webkit-transform: rotateX(90.1deg) rotateY(0) rotateZ(0deg);
+      transform: rotateX(90.1deg) rotateY(0) rotateZ(0deg);
+      z-index: 1;
+    }
+    .c-flipbox__back {
+      -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0);
+      transform: rotateX(0deg) rotateY(0deg) rotateZ(0);
+      z-index: 2;
+    }
+  }
+}
+
+
+/*
+	* @include triangle within a pseudo element and add positioning properties (ie. top, left)
+	* $direction: up, down, left, right
+*/
+@mixin triangle($direction, $size: 6px, $width: .5, $color: #222){
+	content: '';
+	display: block;
+	position: absolute;
+	height: 0; width: 0;
+	@if ($direction == 'up'){
+		border-bottom: $size solid $color;
+		border-left: $width*$size solid transparent;
+		border-right: $width*$size solid transparent;
+	}
+	@else if ($direction == 'down'){
+		border-top: $size solid $color;
+		border-left: $width*$size solid transparent;
+		border-right: $width*$size solid transparent;
+	}
+	@else if ($direction == 'left'){
+		border-top: $width*$size solid transparent;
+		border-bottom: $width*$size solid transparent;
+		border-right: $size solid $color;
+	}
+	@else if ($direction == 'right'){
+		border-top: $width*$size solid transparent;
+		border-bottom: $width*$size solid transparent;
+		border-left: $size solid $color;
+	}
+}
+
+/*---- Flexbox ----*/
+	/*---- Parent ----*/
+		@mixin flexbox() {
+			display: -webkit-box;
+				display: -moz-box;
+					display: -ms-flexbox;
+						display: -webkit-flex;
+							display: flex;
+		}
+		@mixin flex-wrap($values) {
+			-webkit-flex-wrap: $values;
+				-ms-flex-wrap: $values;
+					flex-wrap: $values;
+		   }
+
+		@mixin flex-justify($values) {
+			-webkit-justify-content: $values;
+				-ms-justify-content: $values;
+					justify-content: $values;
+		}
+	/*---- Children ----*/
+		@mixin flex($values) {
+			-webkit-box-flex: $values;
+			-moz-box-flex:  $values;
+			-webkit-flex:  $values;
+			-ms-flex:  $values;
+			flex:  $values;
+		}
+
+		@mixin flex-align($values) {
+			-webkit-align-items: $values;
+				-ms-align-items: $values;
+					align-items: $values;
+		}
+/*---- Youtube Video: Expands video to full width & proportional height ----*/
+	@mixin vid-expand-parent() {
+		padding-bottom: 56.25%; /* 16:9 */
+		padding-top: 0;
+		height: 0;
+		position: relative;
+		overflow: hidden;
+	}
+	@mixin vid-expand-child() {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 101%;
+		height: 101%;
+	}
+
+/* Convert hex to rgba */
+@function RGBA($color, $alpha: .3) {
+	$r: red($color);
+	$g: green($color);
+	$b: blue($color);
+	@return rgba($r, $g, $b, $alpha);
+}
+
+/*---- Remove border & outline on buttons ----*/
+@mixin input-reset {
+  border: none;
+  outline: none;
+}
+
+
+// /*---- Clearfix ----*/
+// /* Usage: @extend %clearfix; */
+// }
+//   %clearfix {
+//     *zoom: 1;
+//     &:before, &:after {
+//       content: " ";
+//       display: table;
+//     }
+//     &:after {
+//       clear: both;
+//     }
+//   }

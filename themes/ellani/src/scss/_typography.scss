@@ -1,0 +1,99 @@
+/*------------------------------------*
+	#Typography
+\*------------------------------------*/
+/*
+*/
+/*---- Begin Standard Body Formatting ----*/
+body {
+  font-family: $body_font;
+  font-weight: $fw;
+  letter-spacing: calc-letter-spacing(25);
+  color: $colour-text-body;
+}
+a {
+  text-decoration: none;
+  /* font-family: $body_font; */
+  font-size: calc-em(13);
+  line-height: ( $base__font-size / $base__font-size );
+  font-weight: $fw;
+  letter-spacing: calc-letter-spacing(25);
+  color: $colour-text-body;
+}
+p {
+  /* font-family: $body_font; */
+  font-size: calc-em(13);
+  line-height: ( $base__font-size / $base__font-size );
+  font-weight: $fw2;
+  letter-spacing: calc-letter-spacing(225);
+}
+span {
+  /* font-family: $body_font; */
+  font-size: calc-em(13);
+  line-height: ( $base__font-size / $base__font-size );
+  font-weight: $fw;
+  letter-spacing: calc-letter-spacing(225);
+}
+li {
+  /* font-family: $body_font; */
+  font-size: calc-em(13);
+  line-height: ( $base__font-size / $base__font-size );
+  font-weight: $fw2;
+  letter-spacing: calc-letter-spacing(225);
+}
+h1 {
+  /* font-family: $body_font; */
+  font-size: calc-em(20);
+  line-height: ( $base__font-size / $base__font-size );
+  font-weight: $fw;
+  letter-spacing: calc-letter-spacing(525);
+  @media screen and (min-width: 1200px) {
+    font-size: calc-em(26);
+  }
+}
+h2 {
+  /* font-family: $body_font; */
+  font-size: calc-em(20);
+  line-height: ( $base__font-size / $base__font-size );
+  font-weight: $fw;
+  letter-spacing: calc-letter-spacing(25);
+  @media screen and (min-width: 1000px) {
+    font-size: calc-em(25);
+  }
+}
+h3 {
+  /* font-family: $body_font; */
+  font-size: calc-em(13*1.5);
+  line-height: ( $base__font-size / $base__font-size );
+  font-weight: $fw1;
+  letter-spacing: calc-letter-spacing(25);
+}
+h4 {
+  /* font-family: $body_font; */
+  font-size: calc-em(13*1.5);
+  line-height: ( $base__font-size / $base__font-size );
+  font-weight: $fw;
+  letter-spacing: calc-letter-spacing(25);
+}
+h5 {
+  /* font-family: $body_font; */
+  font-size: calc-em(13*1.1);
+  line-height: ( $base__font-size / $base__font-size );
+  font-weight: $fw;
+  letter-spacing: calc-letter-spacing(25);
+}
+h6 {
+  /* font-family: $body_font; */
+  font-size: calc-em(13*1.1);
+  line-height: ( $base__font-size / $base__font-size );
+  font-weight: $fw;
+  letter-spacing: calc-letter-spacing(25);
+}
+em {
+  font-style: italic;
+}
+strong {
+  font-weight: $fw1;
+}
+u {
+  text-decoration: underline;
+}

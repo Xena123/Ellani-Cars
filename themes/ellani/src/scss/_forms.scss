@@ -1,0 +1,439 @@
+// GENERAL FORM STYLES FOR NINJA FORMS
+
+.ninja-forms-required-items,
+.nf-form-fields-required,
+.nf-form-title,
+.nf-field-label {
+	display: none;
+}
+
+.nf-field-container {
+	margin-right: 10px;
+	margin-left: 10px;
+	@media screen and (min-width: 1000px) {
+		margin-right: 20px;
+		margin-left: 20px;
+		margin-bottom: 20px;
+	}
+}
+select {
+	border-radius: 0;
+	border: none;
+	-webkit-appearance: none;
+}
+
+.submit-wrap {
+	text-align: center;
+}
+.submit {
+	background-color: #051428 !important;
+	font-size: 26px !important;
+}
+
+.ninja-forms-form-wrap {
+	background-color: #eff1f2;
+	@media screen and (min-width: 600px) {
+		padding-top: 20px;
+	}
+	input,textarea {
+		border: none;
+		font-size: 16px;
+		text-transform: uppercase;
+		padding: 20px;
+	}
+	textarea {
+		padding: 20px;
+	}
+	.submit-wrap {
+		width: 100%;
+		padding: 0;
+	}
+	
+}
+
+.nf-form-cont {
+	::-webkit-input-placeholder,
+	.nf-field-container,
+	.submit-container,
+	.c-find-us-form h5,
+	label[for=title],
+	label[for=maritalstatus],
+	label[for=BestTimetoCall],
+	#wpcf7-f121-o1 span,
+	select { /* Chrome/Opera/Safari */
+	  color: #fff;
+	  font-size: 12px;
+	  font-weight: 200;
+	  text-transform: uppercase;
+	  letter-spacing: calc-letter-spacing(125);
+	  @media screen and (min-width: 800px) {
+	  	font-size: 14px;
+	  }
+	  @media screen and (min-width: 1000px) {
+	  	font-size: 16px;
+	  }
+	}
+
+	::-moz-placeholder,
+	.nf-field-container,
+	.submit-container,
+	#nf-field-19,
+	.c-find-us-form h5 { /* Firefox 19+ */
+	  color: #fff;
+	  font-size: 16px;
+	  font-weight: 200;
+	  letter-spacing: calc-letter-spacing(125);
+	}
+	:-ms-input-placeholder,
+	.nf-field-container,
+	.submit-container,
+	#nf-field-19,
+	.c-find-us-form h5 { /* IE 10+ */
+	  color: #fff;
+	  font-size: 16px;
+	  font-weight: 200;
+	  letter-spacing: calc-letter-spacing(125);
+	}
+	:-moz-placeholder,
+	.nf-field-container,
+	.submit-container,
+	#nf-field-19,
+	.c-find-us-form h5 { /* Firefox 18- */
+	  color: #fff;
+	  font-size: 16px;
+	  font-weight: 200;
+	  letter-spacing: calc-letter-spacing(125);
+	}
+}
+
+// VEHICLE ENQUIRY FORM ON SINGLE VEHICLE PAGE
+.c-vehicle-form {
+	max-width: 700px;
+	margin: auto;
+	header {
+		justify-content: center;
+		@media screen and (min-width: 1050px) {
+			justify-content: flex-start;
+		}
+	}
+}
+
+
+#nf-form-1-cont {
+	.nf-field-container {
+		margin-right: 20px;
+		margin-left: 20px;
+	}
+	#nf-field-5-container {
+		margin-right: 0;
+		margin-left: 0;
+	}
+}
+
+
+// GENERAL ENQUIRY FORM ON FIND US PAGE
+
+.c-find-us-form__header-img {
+	min-height: 25px;
+}
+
+#nf-form-6-cont {
+	.nf-form-title {
+		display: none;
+	}
+	
+	select {
+		padding: 20px;
+		text-transform: uppercase;
+		font-size: 16px;
+	}
+	
+	textarea {
+		height: 100px;
+	}
+}
+
+
+.c-find-us-form {
+	header {
+		padding: 25px 0;
+	}
+}
+
+.ninja-forms-field {
+	background-color: #c1c3c4;
+	color: #fff;
+}
+
+
+
+.nf-after-field .nf-error-msg,
+.ninja-forms-req-symbol, .nf-error-msg {
+	display: none;
+}
+
+// SINGLE VEHICLE ENQUIRY FORM 
+
+#nf-field-5-container {
+	margin-bottom: 0;
+}
+
+
+// FINANCE FORM
+
+#nf-form-7-cont {
+  max-width: 1000px;
+  margin: auto;
+  select {
+		padding: 20px;
+		text-transform: uppercase;
+		font-size: 16px;
+	}
+}
+
+
+
+
+// BOOKING CALENDAR PLUGIN 
+
+.booking_form_div {
+	option {
+		font-weight: 200;
+	}
+}
+
+// BOOKING CALENDAR PAGE 
+
+.c-booking-page {
+	max-width: 850px;
+	margin: auto;
+	.block_hints {
+		//width: 60%;
+		//margin: auto !important;
+	}
+	.c-form-page {
+		background-color: #EFF1F0;
+		padding: 15px;
+	}
+	.c-sgl-field-wrap {
+		padding-bottom: 10px;
+	}
+	label {
+		text-transform: uppercase;
+		font-weight: 200;
+		padding-bottom: 5px;
+	}
+	
+	p {
+		position: absolute;
+		top: 0;
+		left: 0;
+		text-transform: uppercase;
+		color: #fff;
+	}
+	input, textarea, select {
+		width: 98.3% !important;
+		background-color: #c1c3c4;
+		min-height: 35px;
+		border-radius: 0;
+		text-transform: uppercase;
+		padding-left: 10px;
+		font-size: 16px;
+	}
+	textarea {
+		margin-bottom: -3px;
+		min-height: 100px;
+		//width: 98.3% !important;
+	}
+	select {
+		width: 99% !important;
+		padding-left: 0 !important;
+	}
+	.btn {
+		width: 99.3% !important;
+		background-color: #051428 !important;
+		text-transform: uppercase;
+		color: #fff !important;
+		font-size: 16px;
+		font-weight: 200;
+		padding: 20px 0;
+		border: 0;
+		box-shadow: none;
+
+	}
+	
+}
+
+// BOOKING CALENDAR WIDGET
+.wpdevelop input {
+	color: black;
+}
+
+.c-booking-widget-tab {
+	position: absolute;
+  left: -169px;
+  color: white;
+  top: 127px;
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  background-color: #051428;
+  padding: 10px;
+  p {
+		color: #fff;
+		text-transform: uppercase;
+		font-size: 16px;
+		font-weight: 200;
+	}
+	img {
+		transform: rotate(90deg);
+	}	    
+}
+
+.u-show {
+	right: 0 !important;
+}
+
+.c-booking-widget {
+	position: absolute;
+	top: 127px;
+	right: -280px;
+	width: 280px;
+	#bookingwidget-2 {
+		.widget_wpdev_booking {
+			background-color: #EFF1F0;
+			input, textarea {
+				background-color: #c1c3c4;
+				height: 25px;
+				border-radius: 0;
+				text-transform: uppercase;
+			}
+			select {
+				background-color: #c1c3c4;
+				border-radius: 0;
+				width: 99%;
+			}
+			.bk_calendar_frame {
+				margin: 0;
+				width: 100% !important;
+			}
+			.c-form-page {
+				padding: 5px;
+			}
+			.block_hints {
+				display: none;
+			}
+			.c-sgl-field-wrap {
+				padding-bottom: 10px;
+			}
+			input {
+				width: 95%;
+			}
+			.btn {
+				width: 100%;
+				background-color: #051428;
+				text-transform: uppercase;
+				color: #fff;
+				font-size: 16px;
+				font-weight: 200;
+				padding: 20px 0;
+				border: 0;
+				box-shadow: none;
+				height: 60px;
+			}
+			label {
+				text-transform: uppercase;
+				font-weight: 200 !important;
+				color: #000;
+				padding-bottom: 5px;
+			}
+		}
+	}
+}
+
+
+
+
+// #wpcf7-f121-o1 {
+// 	max-width: 1200px;
+// 	margin: auto;
+// 	background-color: #eff1f2;
+// 	padding: 20px;
+// 	position: relative;
+// 	.wpcf7-form-control-wrap {
+// 		//margin: 0 10px;
+// 		width: 48%;
+// 	}
+// 	.wpcf7-form-control {
+// 		width: 98%;
+// 		background-color: #c1c3c4;
+// 		//color: #fff !important;
+// 		font-size: 16px;
+// 		font-weight: 200;
+// 		text-transform: uppercase;
+// 		letter-spacing: calc-letter-spacing(125);
+// 		@media screen and (min-width: 600px) {
+// 			width: 95%;
+// 		}
+// 		@media screen and (min-width: 1000px) {
+// 			width: 98%;
+// 		}
+// 	}
+// 	.Title select,
+// 	.maritalstatus select,
+// 	.BestTimetoCall select,
+// 	.Employment select {
+// 		width: 100%;
+// 		@media screen and (min-width: 600px) {
+// 			width: 98%;
+// 		}
+// 		@media screen and (min-width: 1000px) {
+// 			width: 100%;
+// 		}
+// 	}
+
+// 	select, input {
+// 		border-radius: 0;
+// 		border: none;
+// 		-webkit-appearance: none;
+// 		font-size: 16px;
+// 		height: 40px;
+// 		padding-left: 10px;
+// 	}
+// 	label {
+// 		text-transform: uppercase;
+// 	}
+// 	.cf7mls_next, 
+// 	.wpcf7-submit {
+// 		background-color:  #051428;
+// 		width: 100%;
+// 		margin: 0;
+// 		text-transform: uppercase;
+// 		font-size: 25px;
+// 		font-weight: normal;
+// 		color: #fff;
+// 	}
+// 	.cf7mls_back {
+// 		position: absolute;
+// 	    z-index: 999;
+// 	    font-size: 25px;
+// 	    background-color: #a8c5d0;
+// 	    text-transform: uppercase;
+// 	    margin: 0;
+// 	    font-weight: normal;
+// 	    left: 20px;
+// 	    height: auto;
+// 	}
+// 	.wpcf7-submit {
+// 		padding-left: 0;
+// 		padding: 10px 5px;
+// 		height: auto;
+// 	}
+// 	.wpcf7-response-output {
+// 		display: none !important;
+// 	}
+// 	.ajax-loader {
+// 		display: none;
+// 	}
+// }
+

@@ -1,0 +1,19 @@
+/*------------------------------------*
+  ?Media Queries
+\*------------------------------------*/
+/* ---- Breaks: Body ----*/
+@mixin MQ-small-min {
+   @media screen and (min-width: 480px){
+    @content;
+  }
+}
+@mixin MQ-med-min {
+   @media screen and (min-width: 959px){
+    @content;
+  }
+}
+@mixin MQ-lg-min {
+   @media screen and (min-width: 1200px){
+    @content;
+  }
+}

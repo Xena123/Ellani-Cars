@@ -1,0 +1,234 @@
+/*------------------------------------*
+	?Components
+\*------------------------------------*/
+
+.c-banner-header {
+  padding: 0 10px;
+  top: 30%;
+  @media screen and (min-width: 800px) {
+    top: 43%;
+    left: 15%;
+    max-width: 600px;
+  }
+  @media screen and (min-width: 900px) {
+    left: 18%;
+  }
+  @media screen and (min-width: 1000px) {
+    left: 22%;
+  }
+  @media screen and (min-width: 1200px) {
+    left: 28%;
+  }
+  @media screen and (min-width: 1400px) {
+    left: 30%;
+  }
+  @media screen and (min-width: 1600px) {
+    left: 33%;
+  }
+}
+
+.c-header-overlay {
+  left: 38%;
+  top: 43%;
+}
+
+.c-content-block__img {
+  img {
+    height: auto;
+    width: 100%;
+    @media screen and (min-width: 1200px) {
+      height: 100%;
+    }
+  }
+}
+
+.c-content-block__slider-img {
+  display: block;
+  width: 100%;
+  height: 0;
+  background-position: center center;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  image-rendering: auto;
+  padding-bottom: 100%;
+  @media screen and (min-width: 600px) {
+    padding-bottom: 63%;
+  }
+  @media screen and (min-width: 800px) {
+    padding-bottom: 50%;
+  }
+  @media screen and (min-width: 1000px) {
+    height: 515px;
+    padding-bottom: 0;
+  }
+ 
+}
+
+.c-content-block__banner-img {
+  display: block;
+  width: 100%;
+  height: 0;
+  background-position: center center;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  image-rendering: auto;
+  padding-bottom: 100%;
+  @media screen and (min-width: 1000px) {
+    height: 300px;
+    padding-bottom: 0;
+  }
+}
+
+.c-content-block__icon {
+	max-width: 50px;
+	display: block;
+	margin: auto;
+}
+
+.c-content-block__gallery-img {
+  padding: 5px;
+  cursor: pointer;
+}
+
+.c-gallery__single-image {
+  width: 25% !important;
+}
+
+.c-caret-up {
+	display: none;
+}
+
+// INDEX.PHP 
+.c-main-content {
+  img {
+    display: inline-block;
+  }
+}
+
+// Single Vehicle Styling
+
+.c-single-vehicle__fact-group {
+	display: none;
+}
+
+.c-sgl-vehicle__sgl-fact__with-img {
+  width: 50%;
+  margin: auto;
+  img {
+    @media screen and (min-width: 800px) {
+      display: none;
+    }
+    @media screen and (min-width: 900px) {
+      display: inline-block;
+    }
+  }
+  @media screen and (min-width: 800px) {
+    width: auto;
+  }
+}
+
+.c-single-vehicle__single-fact {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 5px;
+  h5:first-of-type {
+    width: 60%;
+    padding-bottom: 0;
+  }
+  h5:last-of-type {
+    width: 30%;
+    padding-bottom: 0;
+  }
+  @media screen and (min-width: 800px) {
+    padding-bottom: 0;
+    h5:first-of-type {
+      width: auto;
+    }
+    h5:last-of-type {
+      width: auto;
+    }
+  }
+}
+
+.c-single-vehicle__link-wrap {
+  margin: auto;
+  width: 65%;
+  @media screen and (min-width: 1000px) {
+    width: auto;
+  }
+}
+
+.c-single-vehicle__link-img {
+  width: 20%;
+  @media screen and (min-width: 1000px) {
+    width: auto;
+  }
+}
+
+.c-caret-down {
+  -moz-transition: all 0.5s linear;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+  max-height: 10px;
+  @media screen and (min-width: 600px) {
+    max-height: 20px;
+  }
+}
+.c-caret-right {
+  @media screen and (min-width: 600px) {
+    min-height: 13px;
+  }
+}
+
+.down {
+    -ms-transform:rotate(180deg);
+    -moz-transform:rotate(180deg);
+    -webkit-transform:rotate(180deg);
+    transform:rotate(180deg);
+}
+
+.c-single-vehicle--price {
+  padding: 5px 30px;
+}
+
+.c-single-vehicle__fact-group-wrap--last {
+  margin-bottom: 50px;
+  @media screen and (min-width: 1050px) {
+    margin-bottom: 15px;
+  }
+}
+
+// Archive Vehicle Page 
+
+.c-category-vehicle {
+  align-items: flex-start;
+  @media screen and (min-width: 1000px) {
+    align-items: center;
+  }
+}
+
+.c-animate {
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 0.5s;
+  &:hover {
+    transform: scale(1.1, 1.1);
+  }
+}
+
+.c-sgl-field-wrap {
+  padding-bottom: 10px;
+  @media screen and (min-width: 1000px) {
+    padding-bottom: 0;
+  }
+}
+
+.c-vehicle-pagination {
+  margin-top: 10px;
+  text-align: center;
+  a:first-of-type {
+    margin-right: 30px;
+  }
+}

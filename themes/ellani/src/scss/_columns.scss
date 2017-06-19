@@ -1,0 +1,156 @@
+/*------------------------------------*
+  ?Columns
+\*------------------------------------*/
+/* ---- Column - Quarter ----*/
+/* Go to 2 columns wide at this point */
+$break-col-quarter-2: 480px;
+/* Go to 4 columns wide at this point */
+$break-col-quarter-4: 960px;
+@mixin column-quarter {
+  display: block;
+  width: 100%;
+  @media screen and (min-width: $break-col-quarter-2) {
+    display: inline-block;
+    width: 49%;
+    margin-right: 1%;
+    &:last-child,
+    &:nth-child(2n+2) {
+      margin-right: 0;
+    }
+  }
+  @media screen and (min-width: $break-col-quarter-4) {
+    width: 23.75%;
+    &:nth-child(2n+2) {
+      margin-right: 1%;
+    }
+    &:last-child,
+    &:nth-child(4n+4) {
+      margin-right: 0;
+    }
+  }
+}
+/* ---- Column - Half ----*/
+/* Go to 2 columns wide at this point */
+$break-col-half-2: $break-col-quarter-4;
+@mixin column-half {
+  display: block;
+  width: 100%;
+  @media screen and (min-width: $break-col-half-2) {
+    display: inline-block;
+    width: 49%;
+    margin-right: 1%;
+    &:last-child,
+    &:nth-child(2n+2) {
+      margin-right: 0;
+    }
+  }
+}
+/* ---- Column - Third ----*/
+/* Go to 2 columns wide at this point */
+$break-col-third-2: $break-col-quarter-2;
+/* Go to 3 columns wide at this point */
+$break-col-third-3: $break-col-half-2;
+@mixin column-third {
+  display: block;
+  width: 100%;
+  @media screen and (min-width: $break-col-third-2) {
+    display: inline-block;
+    width: 49%;
+    margin-right: 1%;
+    &:last-child,
+    &:nth-child(2n+2) {
+      margin-right: 0;
+    }
+  }
+  @media screen and (min-width: $break-col-third-3) {
+    width: 32.7%;
+    margin-right: 0.9%;
+    &:nth-child(2n+2) {
+      margin-right: 0.9%;
+    }
+    &:last-child,
+    &:nth-child(3n+3) {
+      margin-right: 0;
+    }
+  }
+}
+/* ---- Column - Sixth ----*/
+/* Go to 2 columns wide at this point */
+$break-col-sixth-2: 480px;
+/* Go to 3 columns wide at this point */
+$break-col-sixth-3: $break-col-quarter-2;
+/* Go to 6 columns wide at this point */
+$break-col-sixth-6: $break-col-third-3;
+@mixin column-sixth {
+  display: block;
+  width: 100%;
+  @media screen and (min-width: $break-col-sixth-2) {
+    display: inline-block;
+    margin-right: 1%;
+    &:last-child,
+    &:nth-child(2n+2) {
+      margin-right: 0;
+    }
+  }
+  @media screen and (min-width: $break-col-sixth-3) {
+    width: 32.7%;
+    margin-right: 0.9%;
+    &:nth-child(2n+2) {
+      margin-right: 0.9%;
+    }
+    &:last-child,
+    &:nth-child(3n+3) {
+      margin-right: 0;
+    }
+  }
+  @media screen and (min-width: $break-col-sixth-6) {
+    width: 15%;
+    &:nth-child(3n+3) {
+      margin-right: 0.9%;
+    }
+    &:last-child,
+    &:nth-child(6n+6) {
+      margin-right: 0;
+    }
+  }
+}
+/* ---- Column - Fifth ----*/
+/* Go to 2 columns wide at this point */
+$break-col-fifth-2: $break-col-sixth-2;
+/* Go to 3 columns wide at this point */
+$break-col-fifth-3: $break-col-sixth-3;
+/* Go to 4 columns wide at this point */
+$break-col-fifth-5: $break-col-third-3;
+@mixin column-fifth {
+  display: block;
+  width: 100%;
+  @media screen and (min-width: $break-col-fifth-2) {
+    display: inline-block;
+    margin-right: 1%;
+    &:last-child,
+    &:nth-child(2n+2) {
+      margin-right: 0;
+    }
+  }
+  @media screen and (min-width: $break-col-fifth-3) {
+    width: 32.7%;
+    margin-right: 0.9%;
+    &:nth-child(2n+2) {
+      margin-right: 0.9%;
+    }
+    &:last-child,
+    &:nth-child(3n+3) {
+      margin-right: 0;
+    }
+  }
+  @media screen and (min-width: $break-col-fifth-5) {
+    width: 19%;
+    &:nth-child(3n+3) {
+      margin-right: 0.9%;
+    }
+    &:last-child,
+    &:nth-child(5n+5) {
+      margin-right: 0;
+    }
+  }
+}

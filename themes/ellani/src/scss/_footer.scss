@@ -1,0 +1,60 @@
+/*------------------------------------*
+	?Footer
+\*------------------------------------*/
+/*---- Begin Footer ----*/
+footer {
+  background-color: $colour-footer;
+  a,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  li,
+  p {
+    color: $colour-text-footer;
+  }
+}
+/*---- End Footer ----*/
+
+.c-footer {
+  //height: 300px;
+  background-color: #222020;
+  color: #fff;
+  text-align: center;
+  @media screen and (min-width: 800px) {
+    text-align: left;
+  }
+  p, li, a {
+    color: #fff;
+    font-size: 12px;
+    padding-bottom: 10px;
+  }
+  h3 {
+    color: #fff;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    @media screen and (min-width: 800px) {
+      padding-bottom: 20px;
+    }
+  }
+  .c-footer-section {
+    padding-bottom: 10px;
+    @media screen and (min-width: 800px) {
+      padding-bottom: 0;
+    }
+  }
+}
+
+.c-footer__title {
+  height: 85px;
+  img {
+    height: 50px;
+    width: auto;
+    margin: auto;
+    @media screen and (min-width: 600px) {
+      height: 70px;
+    }
+  }
+}

@@ -1,0 +1,194 @@
+/*------------------------------------*
+	?Objects
+\*------------------------------------*/
+/*---- Standard Site Formatting: Wrap around site content. Adds top/bottom padding & content background ----*/
+.o-main-wrap {
+  background-color: #fff;
+  padding: 9px 0 35px;
+  &.o-page--top-level {
+    padding-bottom: 0;
+  }
+}
+/*---- Wrap section content. Adds screen-width formatting & Allows background colours to extend to screen edge ----*/
+.o-wrap {
+  position: relative;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+}
+
+.o-wrap--full-width {
+  position: relative;
+  width: 100%;
+  /*---- Media Query ----*/
+  @media screen and (min-width: $max_width) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.o-wrap--padding-100 {
+  padding-left: 30px;
+  padding-right: 30px;
+  @media screen and (min-width: 1100px) {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  @media screen and (min-width: 1300px) {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+  @media screen and (min-width: 1500px) {
+    padding-left: 150px;
+    padding-right: 150px;
+  }
+}
+
+.o-wrap--padding-150 {
+  padding-left: 10px;
+  padding-right: 10px;
+  @media screen and (min-width: 800px) {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+  @media screen and (min-width: 1200px) {
+    padding-left: 150px;
+    padding-right: 150px;
+  }
+}
+
+.o-wrap--with-sidebar {
+  position: relative;
+  @media screen and (min-width: 1050px) {
+    width: 66%;
+    padding-right: 20px;
+    display: inline-block;
+  }
+}
+
+.o-wrap--sidebar {
+  position: relative;
+  @media screen and (min-width: 1050px) {
+    width: 31%;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+  }
+}
+
+.o-content {
+  li, ol, ul {
+    list-style-type: circle;
+    list-style: initial;
+    margin-left: 10px;
+  }
+  section {
+    font-size: calc-em(13);
+    line-height: ( $base__font-size / $base__font-size );
+    font-weight: $fw2;
+    letter-spacing: calc-letter-spacing(225);
+  }
+  h2 {
+    margin: 10px 0 5px;
+  }
+}
+.o-background {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.o-hover-text {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.o-text-overlay {
+  position: absolute;
+  z-index: 998;
+}
+
+.o-content-block-wrap {
+  width: 100%;
+  margin: 0;
+  font-size: 0;
+}
+
+.o-content-block {
+  font-size: medium;
+  font-size: initial;
+  display: block;
+  vertical-align: top;
+  text-align: left;
+  overflow: hidden;
+  padding: 22px 23px 25px 22px;
+}
+
+
+.o-content-block__img {
+  display: block;
+  width: 100%;
+  height: 0;
+  background-position: center center;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  image-rendering: auto;
+  padding-bottom: 66%;
+  @media screen and (min-width: 600px) {
+    padding-bottom: 53%;
+  }
+}
+
+// Content Block Widths
+.o-content-block-quarter-width {
+  width: 20%;
+  display: inline-block;
+}
+.o-content-block-third-width--homepage {
+  width: 100%;
+  @media screen and (min-width: 600px) {
+    width: 50%;
+  }
+  @media screen and (min-width: 1000px) {
+    width: 33.3%;
+  }
+}
+
+.o-content-block-third-width {
+  width: 100%;
+  @media screen and (min-width: 800px) {
+    width: 50%;
+  }
+  @media screen and (min-width: 1000px) {
+    width: 33.3%;
+  }
+}
+
+.o-content-block-half-width {
+  text-align: center;
+  @media screen and (min-width: 800px) {
+    text-align: left;
+    width: 100%;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 48%;
+  }
+}
+.o-content-block-two-thirds-width {
+  width: 100%;
+  @media screen and (min-width: 800px) {
+    width: 50%;
+    display: inline-block;
+  }
+  @media screen and (min-width: 1000px) {
+    width: 66%;
+  }
+}

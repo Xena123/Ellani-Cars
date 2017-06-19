@@ -1,0 +1,54 @@
+
+
+@import "_reset.scss";
+@import "_media-queries.scss";
+/*---- Font Sizes ----*/
+$base__font-size: 16 !default;
+$font-size-p: $base__font-size;
+/*---- Font Weights: Adjust to actual font sizes being used. 0 = Normal text, + = steps heavier, - = steps lighter ----*/
+$fw7: 700;
+$fw5: 500;
+$fw: 400;
+$fw2: 200;
+$fw1: 100;
+/*---- Font Faces ----*/
+$body_font: 'Raleway', sans-serif;
+/*---- Max Screen Width ----*/
+$max_width: 1400px;
+/*---- Box Model ----*/
+$box-model: border-box;
+// * {
+//   @include box-sizing(border-box)
+// }
+/*---- Clearfix ----*/
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/*---- Colours ----*/
+$colour-body: #fff;
+$colour-header: #fff;
+$colour-footer: #fff;
+$colour-text-body: #000;
+$colour-text-header: #000;
+$colour-text-footer: #000;
+
+
+
+header, footer {
+  img {
+    display: block;
+  }
+}
+
+p {
+	padding: 5px 0;
+}
+
+:focus {
+	outline: none !important;
+}
+
+
+@import "_mixins.scss";
